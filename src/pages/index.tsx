@@ -45,7 +45,6 @@ const Home: NextPage = (props: any) =>
             <Head>
                 <title>Parag Agarwal &mdash; Full-Stack Developer</title>
             </Head>
-
             <section className={styles.home}>
                 <header className={styles.homeHeader}>
                     <div className={styles.homeHeaderTop} />
@@ -57,12 +56,7 @@ const Home: NextPage = (props: any) =>
                             <span>{ typed }</span>
                             <div>&lt;/<i>code</i>&gt;</div>
                         </div>
-
-                        {/* <Link href='/' className={styles.homeHeaderContentButton}>
-                            {t('common:explore')}
-                        </Link> */}
                     </div>
-
                     <div className={styles.homeHeaderLogs}>
                         <div className={styles.homeHeaderLogsBox}>
                             <span className={styles.homeHeaderLogsBoxNumber}>5+</span>
@@ -82,12 +76,6 @@ const Home: NextPage = (props: any) =>
                         </div>
                     </div>
                 </header>
-
-
-
-{/* --------------------------------frameworks--------------------------------------- */}
-
-
                 <h4 className={styles.homeHeadingSecondary}>{t('home:about.0.heading')}</h4>
                 <div className={styles.homeAbout}>
                     <h2 className={styles.homeAboutParagraph}>{t('home:about.1.paragraph')}</h2>
@@ -119,7 +107,6 @@ const Home: NextPage = (props: any) =>
                                 }
                             </ul>
                         </li>
-                        
                         <li className={styles.homeAboutFATItem}>
                             <h5>Back-End:</h5>
                             <ul className={styles.homeAboutFATItemListLogo}>
@@ -142,7 +129,6 @@ const Home: NextPage = (props: any) =>
                                 }
                             </ul>
                         </li>
-                        
                         <li className={styles.homeAboutFATItem}>
                             <h5>Database:</h5>
 
@@ -168,10 +154,7 @@ const Home: NextPage = (props: any) =>
                         </li>
                     </ul>
                 </div>
-{/* ------------------------------------------Keep in mind */}
-
-
-                <h4 className={styles.homeHeadingPrimary}>{t('home:services.6.heading')}</h4>
+                 <h4 className={styles.homeHeadingPrimary}>{t('home:services.6.heading')}</h4>
                 <div className={styles.homeServices}>
                     {
                         home.services.map(service =>
@@ -187,102 +170,12 @@ const Home: NextPage = (props: any) =>
                     }
                 </div>
 
-
-
-
-                {/* <h4 className={styles.homeHeadingPrimary}>Github Repository</h4>
-                <div className={styles.homeRepositories}>
-                    <Swiper
-                        modules={[Keyboard, Autoplay, Navigation]}
-                        keyboard={{ enabled: true }}
-                        autoplay={{ delay: 2500, disableOnInteraction: false }}
-                        navigation={{
-                            prevEl: nextRef.current,
-                            nextEl: prevRef.current,
-                        }}
-                        spaceBetween={ 20 }
-                        breakpoints={{
-                            0: { slidesPerView: 1 },
-                            650: { slidesPerView: 2 },
-                            1400: { slidesPerView: 3 }
-                        }}
-                    >
-                        {
-                            props.repositories.map((repository: any) =>
-                            {
-                                return (
-                                    <SwiperSlide key={repository.id}>
-                                        <RepositoryCard
-                                            name={repository.name}
-                                            description={repository.description}
-                                            stars={repository.stargazers_count}
-                                            watchers={repository.watchers_count}
-                                            forks={repository.forks}
-                                            repoLink={`https://github.com/${ repository.owner.login }/${ repository.name }`}
-                                            starLink={`https://github.com/${ repository.owner.login }/${ repository.name }/stargazers`}
-                                            watchLink={`https://github.com/${ repository.owner.login }/${ repository.name }/watchers`}
-                                            forkLink={`https://github.com/${ repository.owner.login }/${ repository.name }/network/member`}
-                                        />
-                                    </SwiperSlide>
-                                );
-                            })
-                        }
-                        <div className={styles.homeRepositoriesPrevNext}>
-                            <div ref={nextRef}><BiChevronLeft /></div>
-                            <div ref={prevRef}><BiChevronRight /></div>
-                        </div>
-                    </Swiper>
-                </div> */}
-
                 <div className={styles.homeOrganizations}>
-                    {/* <Swiper
-                        modules={[Keyboard, Autoplay]}
-                        keyboard={{ enabled: true }}
-                        autoplay={{ delay: 2500, disableOnInteraction: false }}
-                        spaceBetween={ 20 }
-                        breakpoints={{
-                            0: { slidesPerView: 1 },
-                            450: { slidesPerView: 2 },
-                            650: { slidesPerView: 3 },
-                            1400: { slidesPerView: 5 }
-                        }}
-                    >
-                        {
-                            props.organizations.map((organization: any) =>
-                            {
-                                return (
-                                    <SwiperSlide style={{ display: 'flex', justifyContent: 'space-evenly' }} key={organization.node_id}>
-                                        <OrganizationCard
-                                            login={organization.login}
-                                            avatarUrl={organization.avatar_url}
-                                        />
-                                    </SwiperSlide>
-                                );
-                            })
-                        }
-                    </Swiper> */}
                 </div>
             </section>
         </Fragment>
     );
 };
 
-// export const getStaticProps: GetStaticProps = async() =>
-// {
-//     const repositories = await axios.get('https://api.github.com/users/IntelligentQuantum/repos');
-//     const organizations = await axios.get('https://api.github.com/users/IntelligentQuantum/orgs');
-
-//     if (!repositories.data || !organizations.data)
-//         return { notFound: true };
-
-//     return {
-//         props:
-//         {
-//             repositories: repositories.data,
-//             organizations: organizations.data
-//         },
-//         revalidate: 86400 // 1 day
-//     };
-// };
 
 export default Home;
