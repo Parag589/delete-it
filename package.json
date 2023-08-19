@@ -1,4 +1,11 @@
-
+{
+    "name": "intelligentquantum.github.io",
+    "homepage": "https://intelligentquantum.github.io/",
+    "author": {
+        "name": "Parag_Agarwal",
+        "email": "paragagarwal0589@gmaol.com",
+        "url": "https://paragagarwal589.github.io/"
+    },
     "version": "3.0.0",
     "private": true,
     "scripts": {
